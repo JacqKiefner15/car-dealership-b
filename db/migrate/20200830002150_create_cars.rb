@@ -5,10 +5,8 @@ class CreateCars < ActiveRecord::Migration[6.0]
       t.string :model
       t.integer :year
       t.string :color
-      t.string :warranty
       t.float :price
-      t.string :body_style
-      t.integer :milage
+  
 
       t.timestamps
     end

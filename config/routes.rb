@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         get :me
         delete :logout
       end
+      
       namespace :cars do
         get :index
         get :show

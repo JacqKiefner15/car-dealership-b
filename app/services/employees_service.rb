@@ -5,7 +5,7 @@ class EmployeesService
       employee
     end
   
-    def self.register(email, first_name, last_name, password)
+    def self.register(email, first_name, last_name, password, password_confirmation)
       employee = Employee.new({
                           email: email,
                           first_name: first_name,
@@ -14,7 +14,7 @@ class EmployeesService
                           password_confirmation: password_confirmation
                       })
       return false unless employee.valid?
-      employee.save
+      employee.save!
       employee.generate_token!
       employee
     end

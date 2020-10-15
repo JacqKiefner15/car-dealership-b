@@ -1,4 +1,6 @@
 class Api::V1::EmployeesController < ApplicationController
+
+  skip_before_action :authenticate, only: [:login, :create], raise: false
       def login
         render json: { error: "User not authenticated" }, status: 401 and return unless @employee = EmployeesService.login(params[:email], params[:password])
         render json: @employee.profile, status: :ok
